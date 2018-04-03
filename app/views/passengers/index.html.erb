@@ -1,8 +1,9 @@
 <h2>Passenger</h2>
 
 <% @passengers.each do |passenger| %>
-  <ul>
+  <ul class="passengers">
     <li><%= link_to passenger.name, passenger_path(passenger) %></li>
+    <li><%= link_to passenger.phone_num, passenger_path(passenger) %></li>
     <li><%= link_to "Edit", edit_passenger_path(passenger) %></li>
     <li><%= link_to("Delete", passenger_path(passenger), method: :delete, data: { confirm: "Do you really want to delete #{passenger.name}?"}) %></li>
   </ul>
