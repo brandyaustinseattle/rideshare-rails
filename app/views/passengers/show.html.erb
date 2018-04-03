@@ -1,12 +1,26 @@
 <h2>Passenger</h2>
 
 <ul>
-  <li>Name: <%= @author.name %></li>
-  <li>Phone Number: <%= @author.phone_num %></li>
+  <li>Name: <%= @passenger.name %></li>
+  <li>Phone Number: <%= @passenger.phone_num %></li>
 </ul>
 
 <table>
   <tr>
-    <th></th>
+    <th>Trip Id</th>
+    <th>Date</th>
+    <th>Driver Id</th>
+    <th>Cost</th>
+    <th>Rating</th>
   </tr>
+
+  <% @passenger.trips.each do |trip| %>
+    <tr>
+        <td><%= trip.id %></td>
+        <td><%= trip.date %></td>
+        <td><%= trip.driver_id %></td>
+        <td><%= trip.cost %></td>
+        <td><%= trip.rating %></td>
+    </tr>
+  <% end %>
 </table>

@@ -24,7 +24,7 @@ class PassengersController < ApplicationController
   end
 
   def update
-    passenger = Passenger.dind(params[:id])
+    passenger = Passenger.find(params[:id])
     passenger.assign_attributes(passenger_params)
     if passenger.save
       redirect_to passenger_path(passenger)
