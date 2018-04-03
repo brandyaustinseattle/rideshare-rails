@@ -1,0 +1,7 @@
+<h2>Show Drivers</h2>
+
+  <div>
+    <strong><%= @driver.name %></strong>
+    <%= link_to "Edit", edit_driver_path(@driver.id)%>
+    <%= link_to "Delete", delete_driver_path(@driver.id)%>
+  </div>

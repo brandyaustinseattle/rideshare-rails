@@ -1,8 +1,7 @@
 class DriversController < ApplicationController
 
   def index
-    @drivers = Driver.all
-
+    @drivers = Driver.all.paginate(page:params[:page], per_page:15).order('name')
   end
 
   def new
@@ -39,7 +38,7 @@ class DriversController < ApplicationController
   end
 
   def show
-    driver = Driver.find(params[:id])
+    @driver = Driver.find(params[:id])
   end
 
   def destroy
