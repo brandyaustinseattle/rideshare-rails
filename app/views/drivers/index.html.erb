@@ -1,0 +1,9 @@
+<h2>Drivers Index </h2>
+
+<ol>
+  <% @drivers.each do |driver| %>
+  <div class = "driver">
+    <strong><li><%= driver.name %></li></strong>
+  </div>
+  <%end%>
+</ol>
