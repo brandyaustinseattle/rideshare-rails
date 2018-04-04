@@ -9,8 +9,9 @@
   padding: 8px;
 }
 
-.passengers_show th, .passengers_show td, .drivers_show th, .drivers_show td {
-  padding: 5px 10px 5px 10px;
+.passengers_show th, .passengers_show td, .drivers_show th, .drivers_show td, .trip_show th, .trip_show td {
+  padding: 5px 25px 5px 10px;
+  text-align: left;
 }
 
 .intro {

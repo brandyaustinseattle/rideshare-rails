@@ -1,0 +1,27 @@
+<h2>Trip Details</h2>
+
+<div class="intro">
+  <div>
+    <strong>Trip Id:</strong> <%= @trip.id %>
+  </div>
+</div>
+
+<table class="trip_show">
+  <tr>
+    <th>Date</th>
+    <th>Driver</th>
+    <th>Passenger</th>
+    <th>Cost</th>
+    <th>Rating</th>
+  </tr>
+
+  <tr>
+    <td><%= @trip.date %></td>
+    <td><%= link_to @trip.driver.name, driver_path(driver) %></td>
+    <td><%= link_to @trip.passenger.name, passenger_path(passenger) %></td>
+    <td><%= @trip.cost %></td>
+    <td><%= @trip.rating %></td>
+    <td><%= link_to "Delete", trip_path(@trip), method: :delete, data: {confirm: "Do you really want to delete trip #{@trip.id}?"} %></td>
+  </tr>
+
+</table>
