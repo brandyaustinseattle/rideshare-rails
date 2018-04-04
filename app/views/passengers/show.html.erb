@@ -1,24 +1,26 @@
-<h2>Passenger</h2>
+<h2>Passenger Details</h2>
 
-<ul>
-  <li>Name: <%= @passenger.name %></li>
-  <li>Phone Number: <%= @passenger.phone_num %></li>
-</ul>
+<div class="intro">
+  <div><strong>Name:</strong> <%= @passenger.name %></div>
+  <div><strong>Phone:</strong> <%= @passenger.phone_num %></div>
 
-<table>
+  <strong><%= "#{@passenger.name} has spent a total of $#{@passenger.total_cost}." %></strong>
+</div>
+
+<table class="passengers_show">
   <tr>
     <th>Trip Id</th>
     <th>Date</th>
-    <th>Driver Id</th>
+    <th>Driver Name</th>
     <th>Cost</th>
     <th>Rating</th>
   </tr>
 
-  <% @passenger.trips.each do |trip| %>
+  <% @passenger.trips.sort.each do |trip| %>
     <tr>
         <td><%= trip.id %></td>
         <td><%= trip.date %></td>
-        <td><%= trip.driver_id %></td>
+        <td><%= trip.driver.name %></td>
         <td><%= trip.cost %></td>
         <td><%= trip.rating %></td>
     </tr>
