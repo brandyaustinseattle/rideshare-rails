@@ -10,7 +10,10 @@ class DriversController < ApplicationController
   end
 
   def create
-    @driver = Driver.new(driver_params)
+    @driver = Driver.new(
+      name: params[:driver][:name],
+      vin: params[:driver][:vin]
+    )
 
     if @driver.save
       redirect_to drivers_path
@@ -48,9 +51,9 @@ class DriversController < ApplicationController
     redirect_to drivers_path
   end
 
-  private
-  def driver_params
-    return params.require(:name, :vin)
-  end
+  # private
+  # def driver_params
+  #   return params.require(:name).permit(:vin)
+  # end
 
 end
