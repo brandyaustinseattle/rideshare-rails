@@ -25,7 +25,7 @@
         <td><%= trip.passenger_id %></td>
         <td><%= trip.cost %></td>
         <td><%= trip.rating %></td>
-        <td><%= link_to "Delete", driver_path(@driver), method: :delete, data: {confirm: "Do you really want to delete #{@driver.name}?"} %></td>
+        <td><%= link_to "Delete", trip_path(trip), method: :delete, data: {confirm: "Do you really want to delete this trip #{trip.id}?"} %></td>
     </tr>
   <% end %>
 </table>
