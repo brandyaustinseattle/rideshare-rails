@@ -1,22 +1,21 @@
 <h2>Drivers Details</h2>
 
 <div class="intro">
-  <strong>Name:</strong> <%= @driver.name %>
-  <strong>VIN:</strong> <%= @driver.vin %>
+  <div><strong>Name:</strong> <%= @driver.name %></div>
+  <div><strong>VIN:</strong> <%= @driver.vin %></div>
 
   <strong><%= "#{@driver.name} has earned $#{@driver.total_earnings} in total" %></strong>
   <strong><%= "Rating: #{@driver.avg_rating}" %></strong>
 
 </div>
 
-<table>
+<table class="drivers_show">
   <tr>
     <th>Id</th>
     <th>Date</th>
     <th>Passenger</th>
     <th>Price </th>
     <th>Rating </th>
-    <th>Delete</th>
   </tr>
 
   <% @driver.trips.sort.each do |trip| %>
