@@ -1,32 +1,28 @@
 <h2>Drivers Details</h2>
 
-<div>
-  <strong>Name: <%= @driver.name %></strong><p>VIN:  <%= @driver.vin %></p>
+<div class="intro">
+  <strong>Name:</strong> <%= @driver.name %>
+  <strong>VIN:</strong> <%= @driver.vin %>
 
-  <% total = 0 %>
-  <% @driver.trips.each do |trip| %>
-  <% "Sub total is #{total += trip.cost}" %>
-  <% end %>
-  <% total_earning = total * (1 - 0.15) %>
-    <%= "#{@driver.name} has earned $#{(total_earning/100).round(2)} in total" %>
+  <strong><%= "#{@driver.name} has earned $#{@driver.total_earnings} in total" %></strong>
+  <strong><%= "Rating: #{@driver.avg_rating}" %></strong>
+
 </div>
 
 <table>
   <tr>
     <th>Id</th>
     <th>Date</th>
-    <th>Drivers</th>
     <th>Passenger</th>
     <th>Price </th>
     <th>Rating </th>
     <th>Delete</th>
   </tr>
 
-  <% @driver.trips.order(date: :desc).each do |trip| %>
+  <% @driver.trips.sort.each do |trip| %>
     <tr>
         <td><%= trip.id %></td>
         <td><%= trip.date %></td>
-        <td><%= trip.driver.name %></td>
         <td><%= trip.passenger_id %></td>
         <td><%= trip.cost %></td>
         <td><%= trip.rating %></td>
@@ -34,8 +30,3 @@
     </tr>
   <% end %>
 </table>
-
-<div>
-  <%=button_to "Edit", edit_driver_path(@driver.id), method: :get%>
-  <%=button_to "Delete", driver_path(@driver.id), method: :delete%>
-</div>
