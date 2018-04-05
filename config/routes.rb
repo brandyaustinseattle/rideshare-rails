@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :trips, only: [:create, :show, :edit, :destroy, :update, :index]
   end
 
+
 end

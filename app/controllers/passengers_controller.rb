@@ -33,11 +33,13 @@ class PassengersController < ApplicationController
 
   def destroy
     Passenger.destroy(params[:id])
+
   end
 
   private
   def passenger_params
     return params.require(:passenger).permit(:name, :phone_num)
   end
+
 
 end

@@ -5,13 +5,13 @@
   <div><strong>VIN:</strong> <%= @driver.vin %></div>
 
   <strong><%= "#{@driver.name} has earned $#{@driver.total_earnings} in total" %></strong>
-  <strong><%= "Rating: #{@driver.avg_rating}" %></strong>
+  <strong><%= "Average Rating: #{@driver.avg_rating}" %></strong>
 
 </div>
 
 <table class="drivers_show">
   <tr>
-    <th>Id</th>
+    <th>Trip Id</th>
     <th>Date</th>
     <th>Passenger</th>
     <th>Price </th>
@@ -20,12 +20,13 @@
 
   <% @driver.trips.sort.each do |trip| %>
     <tr>
-        <td><%= trip.id %></td>
+        <td><%= link_to "Trip# #{trip.id}", trip_path(trip.id)  %></td>
         <td><%= trip.date %></td>
-        <td><%= trip.passenger_id %></td>
+        <td><%= trip.passenger.name %></td>
         <td><%= trip.cost %></td>
         <td><%= trip.rating %></td>
-        <td><%= link_to "Delete", trip_path(trip), method: :delete, data: {confirm: "Do you really want to delete this trip #{trip.id}?"} %></td>
+        <td><%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this trip #{trip.id}?"} %></td>
+        <td><%= link_to "Edit", edit_driver_path%></td>
     </tr>
   <% end %>
 </table>
