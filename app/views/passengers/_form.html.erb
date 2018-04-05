@@ -2,6 +2,7 @@
   <%= page_title %>
 </h4>
 
+<%= render partial: "layouts/error_messages", locals: { model: @passenger } %>
 
 <%= form_for @passenger do |f| %>
   <%= f.label :name, "Name: " %>
