@@ -33,6 +33,7 @@ class PassengersController < ApplicationController
 
   def destroy
     Passenger.destroy(params[:id])
+
   end
 
   private

@@ -27,10 +27,10 @@ class DriversController < ApplicationController
   def update
     @driver = Driver.find(params[:id])
 
-    driver.assign_attributes(driver_params)
+    @driver.assign_attributes(driver_params)
 
-    if @result.save
-      redirect_to driver_path(driver)
+    if @driver.save
+      redirect_to driver_path(@driver)
     else
       render :edit
     end
@@ -44,8 +44,10 @@ class DriversController < ApplicationController
   def destroy
 
     driver = Driver.find(params[:id])
-    driver.destroy
-    redirect_to drivers_path
+
+     driver.destroy
+
+     redirect_to drivers_path
   end
 
   private

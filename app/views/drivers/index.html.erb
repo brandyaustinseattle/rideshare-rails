@@ -1,5 +1,7 @@
 <h2>Drivers Index </h2>
 
+<%= link_to("Add a New Driver", new_driver_path) %>
+
   <% @drivers.each do |driver| %>
   <ul class = "drivers">
     <li><%=link_to driver.name, driver_path(driver) %></li>
