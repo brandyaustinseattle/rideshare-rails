@@ -22,8 +22,22 @@
     <td><%= @trip.passenger.name %></td>
 
     <td><%= @trip.cost %></td>
-    <td><%= @trip.rating %></td>
-    <td><%= link_to "Delete", trip_path(@trip), method: :delete, data: {confirm: "Do you really want to delete trip #{@trip.id}?"} %></td>
+
+    <% if @trip.rating.nil? %>
+
+      <td><%= form_for [@trip.passenger, @trip] do |f| %>
+        <%= f.number_field :rating %>
+
+        <%= f.submit "Save"%></td>
+      <% end %>
+
+    <% else %>
+
+      <td><%= @trip.rating %></td>
+
+    <% end %>
+
+    <td><%= link_to "Delete", passenger_trip_path(@trip.passenger.id, @trip.id), method: :delete, data: {confirm: "Do you really want to delete trip #{@trip.id}?"} %></td>
   </tr>
 
 </table>

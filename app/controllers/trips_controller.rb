@@ -1,24 +1,11 @@
 class TripsController < ApplicationController
 
-  def index
-    if params[:passenger_id]
-      passenger = Passenger.find_by(id: passenger_id)
-      @trips = passenger.trips
-    else
-      @trips = Trip.all.paginate(:page => params[:page], per_page:15).order('name')
-    end
-  end
-
-  def new
-    @trip = Trip.new
-  end
-
   def create
 
     @trip = Trip.create(
       {
-        driver_id: Driver.all.sample,
-        passenger_id: params[passenger_id],
+        driver_id: Driver.all.sample.id,
+        passenger_id: params[:passenger_id],
         date: Date.today,
         rating: nil,
         cost: rand(1..500).to_f
@@ -26,8 +13,9 @@ class TripsController < ApplicationController
     )
 
     if @trip.save
-      redirect_to trips_path
+      redirect_to passenger_trip_path(params[:passenger_id], @trip.id)
     else
+      # not sure what to put here
       render :new
     end
   end
@@ -36,20 +24,18 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  def edit
-    @trip = Trip.find(params[:id])
-  end
-
   def update
     trip = Trip.find(params[:id])
     trip.assign_attributes(trip_params)
     if trip.save
-      redirect_to trip_path(trip)
+      redirect_to passenger_trip_path(params[:passenger_id], trip.id)
     end
   end
 
   def destroy
     Trip.destroy(params[:id])
+
+    redirect_to passenger_path(params[:passenger_id])
   end
 
   private

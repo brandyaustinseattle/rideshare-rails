@@ -7,7 +7,7 @@
   <strong><%= "#{@passenger.name} has spent a total of $#{@passenger.total_cost}." %></strong>
 </div>
 
-<%= link_to("Create a Trip", trips_path) %>
+<%= link_to "Request Trip", passenger_trips_path(@passenger.id), method: :post, data: {confirm: "Do you really want to request a trip for #{@passenger.name}?"} %>
 
 <table class="passengers_show">
   <tr>
@@ -25,7 +25,7 @@
         <td><%= trip.driver.name %></td>
         <td><%= trip.cost %></td>
         <td><%= trip.rating %></td>
-        <td><%= link_to "Delete", trip_path(trip), method: :delete, data: {confirm: "Do you really want to delete trip #{trip.id}?"} %></td>
+        <td><%= link_to "Delete", passenger_trip_path(@passenger.id, trip.id), method: :delete, data: {confirm: "Do you really want to delete trip #{trip.id}?"} %></td>
     </tr>
   <% end %>
 </table>
