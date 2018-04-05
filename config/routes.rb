@@ -5,11 +5,8 @@ Rails.application.routes.draw do
   resources :drivers
 
   resources :passengers do
-
-    post 'new_trip', to:'trips#create'
+    resources :trips, only: [:create, :show, :edit, :destroy, :update, :index]
   end
-
-  resources :trips, :except => [:index]
 
 
 end
