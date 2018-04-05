@@ -20,9 +20,14 @@ class Driver < ApplicationRecord
     total_rating = 0
     counter = 0
     trips.each do |trip|
-      total_rating += trip.rating
-      counter += 1
+      if trip.rating.nil?
+        trip.rating = 0
+      else
+        total_rating += trip.rating
+        counter += 1
+      end
     end
+
 
     if counter == 0
       return "No available average rating"

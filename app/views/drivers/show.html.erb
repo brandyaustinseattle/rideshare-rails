@@ -21,7 +21,6 @@
   <% @driver.trips.sort.each do |trip| %>
     <tr>
         <td><%= link_to "Trip# #{trip.id}", passenger_trip_path(trip.passenger_id, trip.id)  %></td>
-        <td><%= "Trip# #{trip.id}"%></td>
         <td><%= trip.date %></td>
         <td><%= trip.passenger.name %></td>
         <td><%= trip.cost %></td>
