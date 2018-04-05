@@ -24,6 +24,11 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
+  def edit
+    @passenger = Passenger.find(params[:passenger_id])
+    @trip = Trip.find(params[:id])
+  end
+
   def update
     trip = Trip.find(params[:id])
     trip.assign_attributes(trip_params)
