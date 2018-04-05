@@ -1,1 +1,18 @@
 <!--- NEED TO COMPLETE FORM SO THAT I CAN ADD EDIT BUTTON FOR TRIPS --->
+<h4>
+  <%= page_title %>
+</h4>
+
+<% trip = Trip.find(params[:id]) %>
+
+<%= form_for [@passenger, @trip] do |f| %>
+  <%= f.label :date, "Date: " %>
+  <%= f.date_field :date %>
+
+  <%= f.label :driver, "Driver: " %>
+  <%= f.select :driver_id, Driver.all.pluck(:name, :id) %>
+
+  <%= f.submit %>
+
+
+<% end %>
