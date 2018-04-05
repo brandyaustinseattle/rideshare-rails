@@ -10,4 +10,5 @@ resources :passengers do
   resources :trips, only: [:index, :create]
 end
 
+
 end
