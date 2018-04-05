@@ -37,6 +37,7 @@
 
     <% end %>
 
+    <td><%= link_to "Edit", edit_passenger_trip_path(@trip.passenger.id, @trip.id) %></td>
     <td><%= link_to "Delete", passenger_trip_path(@trip.passenger.id, @trip.id), method: :delete, data: {confirm: "Do you really want to delete trip #{@trip.id}?"} %></td>
   </tr>
 
