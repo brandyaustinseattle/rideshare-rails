@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <%= render partial: "layouts/error_messages", locals: { model: @driver } %>
     <%= yield %>
   </body>
 </html>
