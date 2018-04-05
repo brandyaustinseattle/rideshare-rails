@@ -6,5 +6,8 @@ resources :drivers
 resources :passengers
 resources :trips
 
+resources :passengers do
+  resources :trips, only: [:index, :create]
+end
 
 end
