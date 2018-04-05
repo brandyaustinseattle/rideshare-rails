@@ -1,0 +1,6 @@
+<%= form_for @passenger.trip do |f| %>
+  <%= f.label :rating, "Rating: " %>
+  <%= f.integer :rating %>
+
+  <%= f.submit %>
+<% end %>

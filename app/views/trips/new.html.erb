@@ -22,7 +22,9 @@
     <td><%= @trip.passenger.name %></td>
 
     <td><%= @trip.cost %></td>
-    <td><%= @trip.rating %></td>
+
+    <%= render partial: "form", locals: { page_title: "Add a new trip"} %>
+
     <td><%= link_to "Delete", trip_path(@trip), method: :delete, data: {confirm: "Do you really want to delete trip #{@trip.id}?"} %></td>
   </tr>
 
