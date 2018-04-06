@@ -14,7 +14,9 @@
 
   <header>
     <div><%= image_tag "car.jpg", alt: "car" %></div>
-    <div><%= link_to "Home", root_path %></div>
+    <div>
+      <%= link_to "Home", root_path %>
+    </div>
     <div>
       <%= link_to "All Drivers", drivers_path %></br>
       <%= link_to "Add Driver", new_driver_path %>
