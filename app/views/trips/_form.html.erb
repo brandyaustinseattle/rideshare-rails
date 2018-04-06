@@ -12,6 +12,15 @@
   <%= f.label :driver, "Driver: " %>
   <%= f.select :driver_id, Driver.all.pluck(:name, :id) %>
 
+  <%= f.label :passenger, "Passenger: " %>
+  <%= f.select :passenger_id, Passenger.all.pluck(:name, :id) %>
+
+  <%= f.label :cost, "Cost: " %>
+  <%= f.number_field :cost %>
+
+  <%= f.label :rating, "Rating: " %>
+  <%= f.number_field :rating %>
+
   <%= f.submit %>
 
 
