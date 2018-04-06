@@ -13,16 +13,16 @@
   </head>
 
   <header>
-    <div><%= image_tag "car.jpg", alt: "car" %></div>
+    <div><%= link_to root_path do %> <%= image_tag "car.jpg", alt: "car" %><% end %></div>
     <div>
       <%= link_to "Home", root_path %>
     </div>
     <div>
-      <%= link_to "All Drivers", drivers_path %></br>
+      <%= link_to "Drivers", drivers_path %></br>
       <%= link_to "Add Driver", new_driver_path %>
     </div>
     <div>
-      <%= link_to "All Passengers", passengers_path %></br>
+      <%= link_to "Passengers", passengers_path %></br>
       <%= link_to "Add Passenger", new_passenger_path %>
     </div>
   </header>

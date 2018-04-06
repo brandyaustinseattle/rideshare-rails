@@ -12,7 +12,7 @@ class Driver < ApplicationRecord
       total += trip.cost
     end
     total_earning = total * (1 - 0.15)
-    return "$ #{(total_earning/100).round(2)}"
+    return "$#{(total_earning/100).round(2)}"
   end
 
   # Calculate average rating for driver

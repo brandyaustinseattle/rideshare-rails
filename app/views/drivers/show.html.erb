@@ -23,10 +23,10 @@
         <td><%= link_to "#{trip.id}", passenger_trip_path(trip.passenger_id, trip.id)  %></td>
         <td><%= trip.date %></td>
         <td><%= trip.passenger.name %></td>
-        <td><%= trip.cost %></td>
+        <td><%= "$#{trip.cost / 100}" %></td>
         <td><%= trip.rating %></td>
-        <td><%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this trip #{trip.id}?"} %></td>
         <td><%= link_to "Edit", edit_driver_path%></td>
+        <td><%= link_to "Delete", driver_path(@driver.id), method: :delete, data: {confirm: "Do you really want to delete this trip #{trip.id}?"} %></td>
     </tr>
   <% end %>
 </table>

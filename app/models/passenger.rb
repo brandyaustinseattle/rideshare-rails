@@ -12,7 +12,8 @@ class Passenger < ApplicationRecord
       total += trip.cost
     end
 
-    return total
+    return "$#{(total/100).round(2)}"
+
   end
 
 end
