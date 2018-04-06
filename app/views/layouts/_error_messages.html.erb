@@ -5,8 +5,7 @@
       <% model.errors.messages.each do |field, problems| %>
         <% problems.each do |problem| %>
           <li>
-            <strong><%= field %></strong>
-            <%= problem %>
+            <strong><%= "#{field}: " %></strong><%= problem %>
           </li>
         <% end %>
       <% end %>
