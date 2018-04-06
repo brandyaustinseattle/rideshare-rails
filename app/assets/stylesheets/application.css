@@ -13,3 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+header {
+  display: grid;
+  background-color: #FFCC66;
+  grid-template-columns: 1fr auto 1fr 1fr;
+  height: 200px;
+  width: 100%;
+}
+
+header img {
+  height: 200px;
+}
+
+ header a {
+  color: #FFFFFF;
+  font-size: 2em;
+  text-decoration: none;
+ }
