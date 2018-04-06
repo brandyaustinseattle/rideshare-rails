@@ -7,7 +7,7 @@
   <strong><%= "#{@passenger.name} has spent a total of $#{@passenger.total_cost}." %></strong>
 </div>
 
-<%= link_to "Request Trip", passenger_trips_path(@passenger.id), method: :post, data: {confirm: "Do you really want to request a trip for #{@passenger.name}?"} %>
+<div class="button"><%= link_to "Request Trip", passenger_trips_path(@passenger.id), method: :post, data: {confirm: "Do you really want to request a trip for #{@passenger.name}?"} %></div>
 
 <table class="passengers_show">
   <tr>
@@ -19,7 +19,7 @@
   </tr>
 
   <% @passenger.trips.sort.each do |trip| %>
-    <tr>
+    <tr class="row">
         <td><%= link_to trip.id, passenger_trip_path(trip.passenger_id, trip.id) %></td>
         <td><%= trip.date %></td>
         <td><%= trip.driver.name %></td>
