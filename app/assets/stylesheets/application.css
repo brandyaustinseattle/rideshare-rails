@@ -23,7 +23,10 @@ header {
 }
 
 header img {
-  height: 200px;
+  height: 210px;
+  border: solid white 20px;
+  border-radius: 100%;
+  margin: 5px;
 }
 
  header a {
