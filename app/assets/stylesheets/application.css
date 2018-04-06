@@ -74,3 +74,19 @@ header a {
  header a:hover {
   color: #003366;
  }
+
+footer {
+  background-color: #FFCC66;
+  height: 40px;
+  width: 100%;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  text-align: right;
+  margin: 40px 0px 10px 0px;
+}
+
+footer div {
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+}
