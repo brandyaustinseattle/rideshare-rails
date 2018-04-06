@@ -43,3 +43,12 @@ h2 {
   padding: 10px 0px 10px 0px;
   display: grid;
 }
+
+.form_fields {
+  display: flex;
+  color: blue;
+}
+
+.form_fields > * {
+  margin-right: 1%;
+}
