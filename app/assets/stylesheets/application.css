@@ -14,17 +14,23 @@
  *= require_self
  */
 
+* {
+  font-family: Poor Story;
+  font-size: 1.05em;
+}
+
 header {
   display: grid;
   background-color: #FFCC66;
   grid-template-columns: 1fr auto 1fr 1fr;
   height: 200px;
   width: 100%;
+  margin-bottom: 50px;
 }
 
 header img {
   height: 210px;
-  border: solid white 20px;
+  border: solid white 10px;
   border-radius: 100%;
   margin: 5px;
 }
