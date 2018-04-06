@@ -25,7 +25,7 @@ table {
   grid-template-columns: 100px 150px 230px 100px auto 80px 80px;
 }
 
-.row, .trip_show {
+.home a, .row, .trip_show {
   border: solid black 2px;
   border-radius: 5px;
   margin: 16px 0px 16px 0px;
@@ -37,12 +37,16 @@ table {
   grid-template-columns: 150px 230px 230px 80px auto 80px 80px;
 }
 
-.row:hover, .passengers:hover, .drivers:hover, .trip_show:hover {
+.home a:hover, .row:hover, .passengers:hover, .drivers:hover, .trip_show:hover {
   background-color: #CCCCCC;
 }
 
-.row a:hover, .passengers a:hover, .drivers a:hover, .trip_show a:hover {
+.home a:hover, .row a:hover, .passengers a:hover, .drivers a:hover, .trip_show a:hover {
   color: white;
+}
+
+.home a {
+  padding: 8px;
 }
 
 .passengers_show th, .passengers_show td, .drivers_show th, .drivers_show td, .trip_show th, .trip_show td, .trip_showhead {
