@@ -10,7 +10,7 @@
 <div class="button"><%= link_to "Request Trip", passenger_trips_path(@passenger.id), method: :post, data: {confirm: "Do you really want to request a trip for #{@passenger.name}?"} %></div>
 
 <table class="passengers_show">
-  <tr>
+  <tr class="rowhead">
     <th>Trip Id</th>
     <th>Date</th>
     <th>Driver Name</th>

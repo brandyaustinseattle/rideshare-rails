@@ -10,7 +10,7 @@
 </div>
 
 <table class="drivers_show">
-  <tr>
+  <tr class="rowhead">
     <th>Trip Id</th>
     <th>Date</th>
     <th>Passenger</th>
@@ -19,7 +19,7 @@
   </tr>
 
   <% @driver.trips.sort.each do |trip| %>
-    <tr>
+    <tr class="row">
         <td><%= link_to "#{trip.id}", passenger_trip_path(trip.passenger_id, trip.id)  %></td>
         <td><%= trip.date %></td>
         <td><%= trip.passenger.name %></td>

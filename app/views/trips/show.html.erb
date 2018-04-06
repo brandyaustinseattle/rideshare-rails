@@ -6,8 +6,8 @@
   </div>
 </div>
 
-<table class="trip_show">
-  <tr>
+<table>
+  <tr class="trip_showhead">
     <th>Date</th>
     <th>Driver</th>
     <th>Passenger</th>
@@ -15,7 +15,7 @@
     <th>Rating</th>
   </tr>
 
-  <tr>
+  <tr class="trip_show">
     <td><%= @trip.date %></td>
 
 
@@ -23,7 +23,7 @@
     <td><%= link_to @trip.driver.name, driver_path(@trip.driver.id)  %></td>
     <td><%= link_to @trip.passenger.name, passenger_path(@trip.passenger.id)%></td>
 
-    <td><%= @trip.cost %></td>
+    <td><%= "$#{@trip.cost / 100}" %></td>
 
     <% if @trip.rating.nil? %>
 

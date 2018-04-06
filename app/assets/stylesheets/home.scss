@@ -2,23 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body, html {
+    height: 100%;
+}
+
+.bottom img {
+    height: 300px;
+    width: 100%;
+    margin-top: 80px;
+}
+
 .home {
-display: flex;
-flex-direction: column;
-align-items: center;
-padding-top: 20%;
-font-size: 20pt;
-// font-family: Poor Story;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 20pt;
+  // font-family: Poor Story;
 }
 
 .links {
   text-decoration: none;
   color: #003366;
-}
-
-img {
-  height: 210px;
-  border: solid white 8px;
-  border-radius: 100%;
-  margin: 5px;
 }

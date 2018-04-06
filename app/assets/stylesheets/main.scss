@@ -15,15 +15,37 @@
   padding: 8px;
 }
 
-.passengers:hover, .drivers:hover {
+table {
+  width: 100%;
+}
+
+.row, .rowhead {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 100px 150px 230px 100px auto 80px 80px;
+}
+
+.row, .trip_show {
+  border: solid black 2px;
+  border-radius: 5px;
+  margin: 16px 0px 16px 0px;
+}
+
+.trip_show, .trip_showhead {
+  display: grid;
+  list-style-type: none;
+  grid-template-columns: 150px 230px 230px 80px auto 80px 80px;
+}
+
+.row:hover, .passengers:hover, .drivers:hover, .trip_show:hover {
   background-color: #CCCCCC;
 }
 
-.passengers a:hover, .drivers a:hover {
+.row a:hover, .passengers a:hover, .drivers a:hover, .trip_show a:hover {
   color: white;
 }
 
-.passengers_show th, .passengers_show td, .drivers_show th, .drivers_show td, .trip_show th, .trip_show td {
+.passengers_show th, .passengers_show td, .drivers_show th, .drivers_show td, .trip_show th, .trip_show td, .trip_showhead {
   padding: 5px 25px 5px 10px;
   text-align: left;
 }
