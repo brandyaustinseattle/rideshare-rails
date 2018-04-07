@@ -7,7 +7,9 @@
   <strong><%= "#{@passenger.name} has spent a total of #{@passenger.total_cost}." %></strong>
 </div>
 
-<div class="button"><%= link_to "Request Trip", passenger_trips_path(@passenger.id), method: :post, data: {confirm: "Do you really want to request a trip for #{@passenger.name}?"} %></div>
+<div class="button">
+<%= link_to "Request Trip", passenger_trips_path(@passenger.id), method: :post, data: {confirm: "Do you really want to request a trip for #{@passenger.name}?"} %>
+</div>
 
 <table class="passengers_show">
   <tr class="rowhead">
